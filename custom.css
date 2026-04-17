@@ -1,0 +1,190 @@
+/* 🌌 KEEP YOUR DARK BG SAME */
+.dark-bg {
+  background: #020617;
+  color: white;
+}
+
+/* 🌌 FIXED FULLSCREEN WELCOME */
+.welcome-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #020617, #0f172a, #1e3a8a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999; /* 🔥 VERY IMPORTANT */
+  overflow: hidden;
+}
+
+/* ✨ Content */
+.welcome-content {
+  text-align: center;
+  color: white;
+  animation: slideUp 1.2s ease-out;
+}
+
+/* 🩺 Heading */
+.welcome-content h1 {
+  font-size: 40px;
+  opacity: 0.8;
+}
+
+/* 🔥 Main Title */
+.welcome-content h2 {
+  font-size: 60px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 2s infinite alternate;
+}
+
+/* 💬 Subtitle */
+.welcome-content p {
+  margin-top: 10px;
+  color: #94a3b8;
+}
+
+/* 🔭 Scan line */
+.welcome-content::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 4px;
+  margin: 20px auto;
+  background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+  animation: scanLine 2s infinite;
+}
+
+/* 🎬 Animations */
+@keyframes slideUp {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #38bdf8;
+  }
+  to {
+    text-shadow: 0 0 25px #22c55e, 0 0 40px #38bdf8;
+  }
+}
+
+@keyframes scanLine {
+  0% { transform: translateX(-50px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(50px); opacity: 0; }
+}
+
+/* 💎 PREMIUM CARD */
+.card-dark {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  transition: 0.3s;
+}
+
+/* ✨ HOVER GLOW LIKE WELCOME */
+.card-dark:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(56,189,248,0.4);
+}
+
+/* 🔥 HEADER GLOW EFFECT */
+header h1 {
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 2s infinite alternate;
+}
+
+/* ✍️ TEXTAREA */
+.textarea-dark {
+  width: 100%;
+  height: 120px;
+  background: #020617;
+  color: white;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+/* ✨ INPUT GLOW */
+.textarea-dark:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 10px #38bdf8;
+}
+
+/* 🔘 BUTTON PRIMARY */
+.btn-primary {
+  background: linear-gradient(90deg, #38bdf8, #3b82f6);
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* ✨ BUTTON HOVER GLOW */
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #38bdf8;
+}
+
+/* 🔘 SUCCESS BUTTON */
+.btn-success {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-success:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #22c55e;
+}
+
+/* ⚠️ ERROR BOX */
+.error-dark {
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid #ef4444;
+  color: #fca5a5;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+/* ✨ GLOBAL FADE-IN (LIKE WELCOME SCREEN) */
+.min-h-screen {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* 🌟 GLOW ANIMATION */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #38bdf8;
+  }
+  to {
+    text-shadow: 0 0 25px #22c55e, 0 0 40px #38bdf8;
+  }
+}
+
+/* 🎬 FADE */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
