@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => {
     server: {
       port: 3000,
       host: true,
-      allowedHosts: "all", // ✅ FIX for Render
+      allowedHosts: "https://ai-health-advisor-2d5z.onrender.com", // ✅ FIX for Render
     },
 
     define: {
