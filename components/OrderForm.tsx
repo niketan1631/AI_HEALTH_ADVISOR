@@ -5,20 +5,19 @@ interface Props {
 }
 
 const OrderForm: React.FC<Props> = ({ onClose }) => {
+  const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [orderPlaced, setOrderPlaced] = useState(false);
 
   const handleConfirm = () => {
-    if (!address || !phone) {
+    if (!name || !address || !phone) {
       alert("Please fill all details");
       return;
     }
 
-    // Show animation screen
     setOrderPlaced(true);
 
-    // Auto close after 4 seconds
     setTimeout(() => {
       onClose();
     }, 4000);
@@ -34,6 +33,15 @@ const OrderForm: React.FC<Props> = ({ onClose }) => {
             <h2 className="text-xl font-bold mb-4 text-center">
               📦 Enter Delivery Details
             </h2>
+
+            {/* ✅ NEW NAME FIELD */}
+            <input
+              type="text"
+              placeholder="Patient Name"
+              className="w-full border p-2 mb-3 rounded focus:ring-2 focus:ring-indigo-300 outline-none"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
 
             <input
               type="text"
@@ -75,10 +83,9 @@ const OrderForm: React.FC<Props> = ({ onClose }) => {
             </h2>
 
             <p className="text-gray-600 mb-6">
-              Your medicines are arriving in few minutes 🚀
+              Thank you {name}! Your medicines are arriving 🚀
             </p>
 
-            {/* 🛵 Delivery Animation */}
             <div className="relative w-full h-16 overflow-hidden">
               <div className="absolute left-[-50px] animate-moveBike text-3xl">
                 🛵💊
@@ -93,7 +100,7 @@ const OrderForm: React.FC<Props> = ({ onClose }) => {
 
       </div>
 
-      {/* 🔥 Custom Animation */}
+      {/* 🔥 Animation */}
       <style>
         {`
           @keyframes moveBike {
